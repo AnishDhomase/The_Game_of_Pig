@@ -1,0 +1,282 @@
+@font-face {
+    font-family: openSans;
+    src: url(OpenSans_Condensed-Regular.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: openSans;
+    letter-spacing: 0.8px;
+}
+/* Canvas */
+#canvas{
+    background-image: linear-gradient(to bottom right,#b4e390,#83c6ac,#449669);
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+/* Help */
+#canvas #help{
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 10vh;
+    padding: 0 7%;
+}
+#canvas #help div{
+    background-color: aliceblue;
+    height: 5vh;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.8vw 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#canvas #help div:hover{
+    background-color:rgb(225, 240, 254) ;
+    cursor: pointer;
+}
+
+
+
+/* Main Section */
+#canvas #main{
+    height: 90vh;
+    padding: 3vh 16vw;
+}
+
+
+    /* Boundry */
+#canvas #main #boundry{
+    border-radius: 20px;
+    height: 75vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+}
+
+
+    /* Boundry -> buttons */
+#canvas #main #boundry .btns{
+    position: absolute;
+   
+}
+#canvas #main #boundry #newgame{
+    position: absolute;
+    top: 5%;
+    border: 2px solid black;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 0.6vh 1.3vw;
+}
+#canvas #main #boundry #newgame:hover{
+    background-color:rgb(225, 240, 254) ;
+    cursor: pointer;
+}
+#canvas #main #boundry img{
+    width: 11%;
+    top: 30%;
+    border-radius: 22%;
+}
+#canvas #main #boundry img:hover{
+    scale: 1.1 1.1;
+    cursor: grab;
+}
+#canvas #main #boundry #roll{
+    bottom: 21%;
+    border: 2px solid black;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 0.6vh 1.3vw;
+}
+#canvas #main #boundry #roll:hover{
+    background-color:rgb(225, 240, 254) ;
+    cursor: pointer;
+}
+#canvas #main #boundry #hold{
+    bottom: 15%;
+    border: 2px solid black;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 0.6vh 1.3vw;
+}
+#canvas #main #boundry #hold:hover{
+    background-color:rgb(225, 240, 254) ;
+    cursor: pointer;
+}
+    /* player Section */
+#canvas #main .player{
+    text-align: center;
+    position: relative;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#canvas #main #p1{
+    background-color: #fff2cc;
+}
+#canvas #main #p2{
+    background-color: #e7d8ac;
+}
+#canvas #main .player .name{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    left: 50%;
+    font-size: 3.35vw;
+    color: rgb(1, 22, 13);
+}
+#canvas #main .player .digit{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 36%;
+    left: 50%;
+    font-size: 7vw;
+    color: #59c49b;
+}
+#canvas #main .player .score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 81%;
+    left: 50%;
+    font-size: 4vw;
+    background-color: #59c49b;
+    color: white;
+    border-radius: 7px;
+    padding: 4% 4%;
+    width: 45%;
+}
+#canvas #main .player .score .current{ 
+    font-size: 1.6vw;
+    font-weight: 900;
+    color: #02492e;
+}
+#canvas #main .player .score .sum{
+    font-size: 2.6vw;
+}
+    /* Chance bar */
+#canvas #main .player .chance{
+    position: absolute;
+    height: 1.9%;
+    top: 3%;
+    left: 10%;
+    background-color: greenyellow;
+    background-color: rgb(255, 66, 66);
+}
+
+/* Pop Up */
+#helpPopUp img{
+    margin-left: 95%;
+    width: 33px;
+}
+#helpPopUp img:hover{
+    scale: 1.05 1.05;
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
+.opacity{
+    opacity: 0.5;
+}
+#helpPopUp{
+    z-index: 1000;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    height: 85vh;
+    width: 85vw;
+    padding: 5vh 3vw;
+    background-color: #daf3fe;
+    border-radius: 20px;
+}
+
+
+
+/* Media Queries */
+@media (max-width : 800px){
+    #canvas #main #boundry img{
+        width: 16%;
+        top: 40%;
+        border-radius: 22%;
+    }
+    #canvas #main .player .digit{
+        font-size: 11vh;
+        top: 32%;
+    }
+}
+@media (max-width : 600px){
+    #canvas #main{
+        height: 90vh;
+        padding: 3vh 10vw;
+    }
+    #canvas #main .player .name{
+        font-size: 3.35vh;
+    }
+    #canvas #main .player .digit{
+        font-size: 11vh;
+        top: 32%;
+    }
+    #canvas #main #boundry img{
+        width: 21%;
+        top: 40%;
+        border-radius: 22%;
+    }
+    #canvas #main .player .score{
+        padding: 4% 4%;
+        width: 65%;
+        height: 18%;
+    }
+    #canvas #main .player .score .current{ 
+        font-size: 1.8vh;
+        font-weight: 900;
+        color: #02492e;
+    }
+    #canvas #main .player .score .sum{
+        font-size: 3.2vh;
+    }
+    #canvas #main #boundry #hold{
+        bottom: 2%;
+        border-radius: 17px;
+        padding: 0.6vh 1.3vw;
+    }
+}
+@media (max-width : 450px){
+    #canvas #main{
+        height: 90vh;
+        padding: 3vh 4vw;
+    }
+    #canvas #main #boundry img{
+        width: 29%;
+        top: 40%;
+        border-radius: 22%;
+    }
+    #canvas #main .player .score{
+        top: 75%;
+        width: 75%;
+        padding: 2.5% 0;
+    }
+}
+
+@media (max-width : 315px){
+    #canvas #main .player .name{
+        font-size: 2.75vh;
+    }
+    #canvas #main .player .score{
+        padding: 1.5% 0;
+    }
+}
