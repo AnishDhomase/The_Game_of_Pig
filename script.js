@@ -101,6 +101,8 @@ let reset = function(){
     scoreBox1.classList.add("blink");
     scoreBox2.classList.remove("blink");
     dice.src = `dice-1.png`;
+    canvas.classList.remove("bgwin");
+
 }
     
 
