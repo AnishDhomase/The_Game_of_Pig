@@ -72,9 +72,9 @@ let addToFinal = function(){
     }
 }
 let checkWinner = function(){
-    if(Number(Score1.textContent)>=100)
+    if(Number(Score1.textContent)>=20)
         return 1;
-    else if(Number(Score2.textContent)>=100)
+    else if(Number(Score2.textContent)>=20)
         return 2;
     return 0;
 }
